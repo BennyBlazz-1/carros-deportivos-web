@@ -1,0 +1,142 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.1",
+  "serial": 25,
+  "lineage": "b9acc072-c9cb-5bc9-a9f5-2f6e4513aeff",
+  "outputs": {
+    "app_url": {
+      "value": "http://carros-deportivos-uf146g.mexicocentral.azurecontainer.io:8080",
+      "type": "string"
+    },
+    "resource_group_name": {
+      "value": "carros-deportivos-rg",
+      "type": "string"
+    },
+    "sql_admin_user": {
+      "value": "adminsql",
+      "type": "string"
+    },
+    "sql_database_name": {
+      "value": "carrosdb",
+      "type": "string"
+    },
+    "sql_server_fqdn": {
+      "value": "carros-deportivos-sqlserver.database.windows.net",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_mssql_server",
+      "name": "sqlserver",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "administrator_login": "adminsql",
+            "administrator_login_password": "Joel110807200403",
+            "administrator_login_password_wo": null,
+            "administrator_login_password_wo_version": 0,
+            "azuread_administrator": [],
+            "connection_policy": "Default",
+            "express_vulnerability_assessment_enabled": false,
+            "fully_qualified_domain_name": "carros-deportivos-sqlserver.database.windows.net",
+            "id": "/subscriptions/6441c56f-2b11-456a-a0a1-aaa259e27929/resourceGroups/carros-deportivos-rg/providers/Microsoft.Sql/servers/carros-deportivos-sqlserver",
+            "identity": [],
+            "location": "mexicocentral",
+            "minimum_tls_version": "1.2",
+            "name": "carros-deportivos-sqlserver",
+            "outbound_network_restriction_enabled": false,
+            "primary_user_assigned_identity_id": "",
+            "public_network_access_enabled": true,
+            "resource_group_name": "carros-deportivos-rg",
+            "restorable_dropped_database_ids": [],
+            "tags": {
+              "project": "carros-deportivos"
+            },
+            "timeouts": null,
+            "transparent_data_encryption_key_vault_key_id": "",
+            "version": "12.0"
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "administrator_login_password"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "administrator_login_password_wo"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjozNjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "rg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/6441c56f-2b11-456a-a0a1-aaa259e27929/resourceGroups/carros-deportivos-rg",
+            "location": "mexicocentral",
+            "managed_by": "",
+            "name": "carros-deportivos-rg",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "carros-deportivos-rg",
+            "subscription_id": "6441c56f-2b11-456a-a0a1-aaa259e27929"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "random_string",
+      "name": "dns",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "id": "uf146g",
+            "keepers": null,
+            "length": 6,
+            "lower": true,
+            "min_lower": 0,
+            "min_numeric": 0,
+            "min_special": 0,
+            "min_upper": 0,
+            "number": true,
+            "numeric": true,
+            "override_special": null,
+            "result": "uf146g",
+            "special": false,
+            "upper": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
